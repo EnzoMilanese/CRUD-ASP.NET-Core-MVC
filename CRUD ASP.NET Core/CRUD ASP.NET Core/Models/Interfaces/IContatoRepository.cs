@@ -11,6 +11,6 @@ namespace CRUD_ASP.NET_Core.Models
         void UpdateContato(int Id, Contato contato);
         void DeleteContato(int Id);
         Contato GetContato(int Id);
-        List<Contato> GetContatos();
+        IEnumerable<Contato> GetContatos();
     }
 }

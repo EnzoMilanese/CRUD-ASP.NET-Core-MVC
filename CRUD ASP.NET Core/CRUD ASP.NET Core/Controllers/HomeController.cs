@@ -1,4 +1,5 @@
 ﻿using CRUD_ASP.NET_Core.Models;
+using CRUD_ASP.NET_Core.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,9 @@ namespace CRUD_ASP.NET_Core.Controllers
 
         public IActionResult Index()
         {
-            Contato model = _contatoRepository.GetContato(1);
-            return View(model);
+            ContatoVM viewModel = new ContatoVM();
+            viewModel.Contatos = _contatoRepository.GetContatos();
+            return View(viewModel);
         }
     }
 }

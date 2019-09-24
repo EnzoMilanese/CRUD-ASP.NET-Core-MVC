@@ -12,6 +12,7 @@ namespace CRUD_ASP.NET_Core.Models.Repositories
         public ContatoRepository()
         {
             _contatoList = new List<Contato>();
+            _contatoList.Add(new Contato { Id = 1, Nome = "Enzo", Numero = "+55 11 96900-5352" });
         }
 
         public void CreateContato(Contato contato)
@@ -26,12 +27,12 @@ namespace CRUD_ASP.NET_Core.Models.Repositories
 
         public Contato GetContato(int Id)
         {
-            return new Contato{ Id = Id, Nome = "Enzo", Numero = "+55 11 96900-5352" };
+            return _contatoList.FirstOrDefault(x => x.Id == Id);
         }
 
-        public List<Contato> GetContatos()
+        public IEnumerable<Contato> GetContatos()
         {
-            throw new NotImplementedException();
+            return _contatoList;
         }
 
         public void UpdateContato(int Id, Contato contato)

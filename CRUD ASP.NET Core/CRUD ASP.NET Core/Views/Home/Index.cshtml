@@ -1,18 +1,21 @@
-﻿@model CRUD_ASP.NET_Core.Models.Contato
+﻿@model CRUD_ASP.NET_Core.ViewModels.ContatoVM
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Lista de contatos</title>
 </head>
 <body>
-    <h1>Contato</h1>
+    <h1>Contatos</h1>
     <table>
         <tr>
             <th><b>Nome</b></th>
             <th><b>Número</b></th>
         </tr>
         <tr>
-            <td>@Model.Nome</td>
-            <td>@Model.Numero</td>
+            @foreach (var x in Model.Contatos)
+            {
+                <td>@x.Nome</td>
+                <td>@x.Numero</td>
+            }
         </tr>
     </table>
 </body>
