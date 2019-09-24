@@ -26,7 +26,7 @@ namespace CRUD_ASP.NET_Core.Models.Repositories
 
         public Contato GetContato(int Id)
         {
-            return _contatoList.FirstOrDefault(c => c.Id == Id);
+            return new Contato{ Id = Id, Nome = "Enzo", Numero = "+55 11 96900-5352" };
         }
 
         public List<Contato> GetContatos()
