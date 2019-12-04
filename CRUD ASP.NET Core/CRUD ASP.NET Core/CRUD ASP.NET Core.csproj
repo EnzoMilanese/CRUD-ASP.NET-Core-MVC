@@ -4,11 +4,38 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>CRUD_ASP.NET_Core</RootNamespace>
+    <UserSecretsId>c57d89d5-d75a-43d5-84ab-514ac0d3e0d5</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190926142504_Initial migration.cs" />
+    <Compile Remove="Migrations\20190926142504_Initial migration.Designer.cs" />
+    <Compile Remove="Migrations\20190926181228_AddFotoPerfilColumn.cs" />
+    <Compile Remove="Migrations\20190926181228_AddFotoPerfilColumn.Designer.cs" />
+    <Compile Remove="Migrations\20190930131928_Adding ID in table Contato.cs" />
+    <Compile Remove="Migrations\20190930131928_Adding ID in table Contato.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Controllers\HomeController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\jquery\jquery.js" />
+    <None Include="wwwroot\lib\jquery\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\jquery.min.map" />
+    <None Include="wwwroot\lib\jquery\jquery.slim.js" />
+    <None Include="wwwroot\lib\jquery\jquery.slim.min.js" />
+    <None Include="wwwroot\lib\jquery\jquery.slim.min.map" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" Version="2.0.0-preview-010060003-1250" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
 </Project>

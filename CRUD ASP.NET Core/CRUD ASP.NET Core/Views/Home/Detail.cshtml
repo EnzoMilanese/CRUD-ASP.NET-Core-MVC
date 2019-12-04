@@ -1,0 +1,26 @@
+﻿@model ContatoVM.Detail
+
+@{
+    Contato contato = Model.Contato;
+    ViewBag.Title = contato.Nome;
+    var photoPath = "/images/" + (contato.FotoPerfil ?? "icon-placeholder.jpg");
+}
+<div class="text-center">
+    <h1>
+        Detalhe
+    </h1>
+</div>
+<br />
+<div class="m-2 d-flex justify-content-center">
+    <div class="m-1">
+        <img class="card-img-top thumbnail" src=@photoPath asp-append-version="true" alt="Foto de perfil">
+        <div class="card">
+            <div class="card-body m-2">
+                <h5 class="card-title">@contato.Nome</h5>
+                <p class="card-text">@contato.Numero</p>
+                <a asp-action="Edit" asp-controller="Home" asp-route-id="@contato.Id" class="btn btn-primary">Editar</a>
+                <a href="#" class="btn btn-danger">Deletar</a>
+            </div>
+        </div>
+    </div>
+</div>

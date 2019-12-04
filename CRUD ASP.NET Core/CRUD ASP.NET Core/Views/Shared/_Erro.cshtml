@@ -1,0 +1,13 @@
+﻿@model ErroVM
+@{
+    ViewBag.Title = $"Erro {Model.StatusCode}";
+}
+ 
+<div class="alert alert-danger text-center m-lg-5">
+    <h1>Erro @Model.StatusCode</h1>
+    <h3>@Model.ErrorMessage</h3>
+</div>
+
+<div class="text-center">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-success">Voltar para tela inicial</a>
+</div>

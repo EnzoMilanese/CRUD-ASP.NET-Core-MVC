@@ -1,22 +1,37 @@
-﻿@model CRUD_ASP.NET_Core.ViewModels.ContatoVM
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Lista de contatos</title>
-</head>
-<body>
-    <h1>Contatos</h1>
-    <table>
-        <tr>
-            <th><b>Nome</b></th>
-            <th><b>Número</b></th>
-        </tr>
-        <tr>
-            @foreach (var x in Model.Contatos)
+﻿@model ContatoVM.Index;
+@{
+    ViewBag.Title = "Lista de Contatos";
+    var contatos = Model.Contatos.ToList();
+}
+
+<div class="text-center">
+    <h1>
+        Contatos
+    </h1>
+</div>
+
+<br/>
+
+<div class="container">
+    <div class="row m-2">
+        @{ if (contatos != null)
             {
-                <td>@x.Nome</td>
-                <td>@x.Numero</td>
+                foreach (var x in contatos)
+                {
+                    <div class="col-sm-auto">
+                        <div class="card m-1">
+                            <img class="card-img-top thumbnail" src="~/images/@x.FotoPerfil" asp-append-version="true" alt="Foto de perfil">
+                            <div class="card-body">
+                                <h5 class="card-title">@x.Nome</h5>
+                                <p class="card-text">@x.Numero</p>
+                                <a asp-action="Detail" asp-controller="Home" asp-route-id="@x.Id" class="btn btn-primary">Detalhes</a>
+                                <a asp-action="Edit" asp-controller="Home" asp-route-id="@x.Id" class="btn btn-primary">Editar</a>
+                                <a href="#" class="btn btn-danger">Deletar</a>
+                            </div>
+                        </div>
+                    </div>
+                }
             }
-        </tr>
-    </table>
-</body>
-</html>
+        }
+    </div>
+</div>
